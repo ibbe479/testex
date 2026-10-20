@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "doors",
+  "info": {
+    "singularName": "door",
+    "pluralName": "doors",
+    "displayName": "door"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "abed": {
+      "type": "string"
+    }
+  }
+}

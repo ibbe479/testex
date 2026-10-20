@@ -443,6 +443,31 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDoorDoor extends Struct.CollectionTypeSchema {
+  collectionName: 'doors';
+  info: {
+    displayName: 'door';
+    pluralName: 'doors';
+    singularName: 'door';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    abed: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::door.door'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiInlaeggInlaegg extends Struct.CollectionTypeSchema {
   collectionName: 'inlaeggs';
   info: {
@@ -986,6 +1011,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::door.door': ApiDoorDoor;
       'api::inlaegg.inlaegg': ApiInlaeggInlaegg;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
