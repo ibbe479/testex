@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inlaeggs",
+  "info": {
+    "singularName": "inlaegg",
+    "pluralName": "inlaeggs",
+    "displayName": "inlägg"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "bild": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
